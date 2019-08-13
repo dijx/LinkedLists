@@ -2,10 +2,8 @@ package org.anyrem;
 
 import org.anyrem.linkedList.LinkedList;
 
-public class App 
-{
-    public static void main( String[] args )
-    {
+public class App {
+    public static void main(String[] args) {
 
         LinkedList linkedList = new LinkedList();
 /*
@@ -28,12 +26,12 @@ public class App
         linkedList.prepend(5);
         linkedList.prepend(6);
 
+        System.out.println(linkedList.toString());
 
-        System.out.println(
-        linkedList.getSize()
-                +"\r\n" +
-        linkedList.toString()
-        );
+        System.out.println(linkedList.get(0).data);
+        System.out.println(linkedList.get(4).data);
+        System.out.println(linkedList.get(5).data);
+        System.out.println(linkedList.get(12).data);
 
 
     }

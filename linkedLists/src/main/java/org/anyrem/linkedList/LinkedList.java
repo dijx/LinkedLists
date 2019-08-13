@@ -15,7 +15,7 @@ public class LinkedList {
 
         Node n = new Node(data);
 
-        if(size == 0) {
+        if (size == 0) {
 
             header.next = n;
             lastNode = n;
@@ -40,6 +40,50 @@ public class LinkedList {
         size++;
     }
 
+    public boolean removeFirst() {
+
+        if (size > 0) {
+            header.next = header.next.next;
+            size--;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean removeLast() {
+
+        boolean ret = false;
+        Node n = header;
+
+        while (n != null) {
+
+            Node temp = n;
+            n = n.next;
+
+            if (n == lastNode) {
+                lastNode = temp;
+                lastNode.next = null;
+                size--;
+                ret = true;
+            }
+        }
+        return ret;
+    }
+
+    public Node get(int number) {
+
+        Node nodeNr = header;
+        int counter = 0;
+
+        while (counter <= number && number < size) {
+            nodeNr = nodeNr.next;
+            counter++;
+        }
+
+        return nodeNr;
+    }
+
     public int getSize() {
         return size;
     }
@@ -47,12 +91,13 @@ public class LinkedList {
     public String toString() {
 
         Node n = header.next;
-        String ret = "";
+        String ret = size + "::[ ";
         while (n != null) {
             ret += n.data + " ";
             n = n.next;
         }
-     return  ret;
+        ret += "]";
+        return ret;
     }
 
 }
