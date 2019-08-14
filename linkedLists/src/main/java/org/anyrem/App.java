@@ -28,11 +28,24 @@ public class App {
 
         System.out.println(linkedList.toString());
 
-        System.out.println(linkedList.get(0).data);
-        System.out.println(linkedList.get(4).data);
-        System.out.println(linkedList.get(5).data);
-        System.out.println(linkedList.get(12).data);
+        System.out.println(linkedList.instertAt(0, 7));
 
+        System.out.println(linkedList.toString());
 
+        System.out.println(linkedList.instertAt(7, 8));
+
+        System.out.println(linkedList.toString());
+
+        System.out.println(linkedList.instertAt(2, 9));
+
+        System.out.println(linkedList.toString());
+
+        System.out.println(linkedList.instertAt(0, 10));
+
+        System.out.println(linkedList.toString());
+
+        System.out.println(linkedList.removeAt(3));
+
+        System.out.println(linkedList.toString());
     }
 }

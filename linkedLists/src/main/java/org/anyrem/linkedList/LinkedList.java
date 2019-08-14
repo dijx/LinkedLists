@@ -40,6 +40,42 @@ public class LinkedList {
         size++;
     }
 
+
+    public boolean instertAt(int position, int data) {
+
+        Node newNode = new Node(data);
+
+        if (position == 0) {
+
+            newNode.next = header.next;
+            header.next = newNode;
+            size++;
+
+            return true;
+
+        } else if (position == size) {
+
+            append(data);
+
+            return true;
+
+        } else if (position > 0 && position < size ) {
+
+            Node prev = get(position -1);
+            Node next = get(position);
+
+            prev.next = newNode;
+            newNode.next = next;
+            size++;
+
+            return true;
+
+        }
+
+        throw new RuntimeException("index out of bounds");
+    }
+
+
     public boolean removeFirst() {
 
         if (size > 0) {
@@ -71,21 +107,58 @@ public class LinkedList {
         return ret;
     }
 
-    public Node get(int number) {
+    public boolean removeAt(int position) {
 
-        Node nodeNr = header;
-        int counter = 0;
+        if (position == 0) {
 
-        while (counter <= number && number < size) {
-            nodeNr = nodeNr.next;
-            counter++;
+            removeFirst();
+
+        } else if (position == size -1) {
+
+            removeLast();
+
+        } else if (position > 0 && position < size - 1) {
+
+            get(position -1).next = get(position + 1);
+            size--;
+
+            return true;
         }
 
-        return nodeNr;
+        throw new RuntimeException("index out of bounds");
     }
 
-    public int getSize() {
-        return size;
+
+    public Node get(int number) {
+
+        if (number == size - 1) {
+
+            return lastNode;
+
+        } else if (number >= size || number < 0) {
+
+            throw new RuntimeException("index out of bound");
+
+        } else {
+
+            Node nodeNr = header;
+            int counter = 0;
+
+            while (counter <= number && number < size) {
+                nodeNr = nodeNr.next;
+                counter++;
+            }
+            return nodeNr;
+        }
+    }
+
+    public int getData(int position) {
+
+        return get(position).data;
+    }
+
+    public int size() {
+            return size;
     }
 
     public String toString() {
