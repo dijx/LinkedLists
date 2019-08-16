@@ -1,9 +1,9 @@
-package org.anyrem;
+package org.anyrem.linkedList;
 
 import org.anyrem.linkedList.LinkedList;
 import org.assertj.core.api.Assertions;
-import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import java.util.logging.Logger;
 
@@ -11,9 +11,7 @@ import java.util.logging.Logger;
 /**
  * Unit test for simple App.
  */
-public class AppTest
-
-{
+public class TestLinkedList {
 
     private final Logger logger = Logger.getLogger(this.getClass().getName());
     private static LinkedList linkedList = new LinkedList();
