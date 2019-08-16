@@ -28,19 +28,19 @@ public class App {
 
         System.out.println(linkedList.toString());
 
-        System.out.println(linkedList.instertAt(0, 7));
+        System.out.println(linkedList.insertAt(0, 7));
 
         System.out.println(linkedList.toString());
 
-        System.out.println(linkedList.instertAt(7, 8));
+        System.out.println(linkedList.insertAt(7, 8));
 
         System.out.println(linkedList.toString());
 
-        System.out.println(linkedList.instertAt(2, 9));
+        System.out.println(linkedList.insertAt(2, 9));
 
         System.out.println(linkedList.toString());
 
-        System.out.println(linkedList.instertAt(0, 10));
+        System.out.println(linkedList.insertAt(0, 10));
 
         System.out.println(linkedList.toString());
 

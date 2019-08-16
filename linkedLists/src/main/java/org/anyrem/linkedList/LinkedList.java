@@ -40,8 +40,7 @@ public class LinkedList {
         size++;
     }
 
-
-    public boolean instertAt(int position, int data) {
+    public boolean insertAt(int position, int data) {
 
         Node newNode = new Node(data);
 
@@ -49,6 +48,7 @@ public class LinkedList {
 
             newNode.next = header.next;
             header.next = newNode;
+            lastNode = newNode;
             size++;
 
             return true;
@@ -137,7 +137,7 @@ public class LinkedList {
 
         } else if (number >= size || number < 0) {
 
-            throw new RuntimeException("index out of bound");
+            throw new RuntimeException("index out of bounds");
 
         } else {
 
